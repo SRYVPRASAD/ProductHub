@@ -1,0 +1,9 @@
+<div *ngIf="selectedProducts.length > 0">
+  <h3>Selected Products</h3>
+  <ul>
+    <li *ngFor="let product of selectedProducts">
+      {{ product.name }}
+      <button mat-button (click)="unselectProduct(product)">Unselect</button>
+    </li>
+  </ul>
+</div>

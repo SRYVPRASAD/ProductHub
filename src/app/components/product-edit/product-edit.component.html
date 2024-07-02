@@ -1,0 +1,16 @@
+<div *ngIf="tempProducts.length > 0">
+  <h3>Edit Products</h3>
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="tempProducts[0].name" />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Price</mat-label>
+    <input matInput [(ngModel)]="tempProducts[0].price" type="number" />
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Description</mat-label>
+    <textarea matInput [(ngModel)]="tempProducts[0].description"></textarea>
+  </mat-form-field>
+  <button mat-button (click)="applyChanges()">Apply</button>
+</div>
