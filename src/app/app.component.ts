@@ -1,10 +1,15 @@
 import { Component } from '@angular/core';
+import { ProductService, Product } from './services/product.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ProductApp';
+  selectedProducts$: any | Observable<Product[]>;
+
+  constructor(private productService: ProductService) {
+    this.selectedProducts$ = this.productService.selectedProducts$;
+  }
 }
